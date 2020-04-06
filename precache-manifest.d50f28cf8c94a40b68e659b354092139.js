@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8f1e4e1ba8e00e4110e6518e60150b63",
+    "revision": "9e3f47109422311656af30616476351c",
     "url": "/vk-app-ft/index.html"
   },
   {
-    "revision": "3c3d73a33b7a6258c7db",
+    "revision": "e6c7563b2f4aea2ee800",
     "url": "/vk-app-ft/static/css/2.4fc5a6bc.chunk.css"
   },
   {
-    "revision": "3c3d73a33b7a6258c7db",
-    "url": "/vk-app-ft/static/js/2.1e1ae954.chunk.js"
+    "revision": "e6c7563b2f4aea2ee800",
+    "url": "/vk-app-ft/static/js/2.f90d1b84.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/vk-app-ft/static/js/2.1e1ae954.chunk.js.LICENSE.txt"
+    "url": "/vk-app-ft/static/js/2.f90d1b84.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "33bb4f63a7326d75000d",
-    "url": "/vk-app-ft/static/js/main.fd45f17c.chunk.js"
+    "revision": "9c61dc702c265c335e27",
+    "url": "/vk-app-ft/static/js/main.0a5b9907.chunk.js"
   },
   {
     "revision": "d630e574853fe9e4fab0",
