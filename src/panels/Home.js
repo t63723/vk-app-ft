@@ -2,32 +2,56 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
-import Button from '@vkontakte/vkui/dist/components/Button/Button';
 import Group from '@vkontakte/vkui/dist/components/Group/Group';
 import Cell from '@vkontakte/vkui/dist/components/Cell/Cell';
 import Div from '@vkontakte/vkui/dist/components/Div/Div';
-import Avatar from '@vkontakte/vkui/dist/components/Avatar/Avatar';
+import { Link } from '@vkontakte/vkui';
 
-const Home = ({ id, go, fetchedUser }) => (
+
+const textAlign = {
+	"textAlign": "center",
+	"paddingTop": "40px"
+};
+
+const buttonMain = {
+	"backgroundColor": "#2B50ED",
+	"color": "white",
+	"padding": "1em 1.5em",
+	"textDecoration": "none",
+	"textTransform": "uppercase",
+	"borderRadius": "14px"
+}
+
+const buttonSecond = {
+	"backgroundColor": "#E0E8F6",
+	"color": "#2B50ED",
+	"padding": "1em 1.5em",
+	"textDecoration": "none",
+	"textTransform": "uppercase",
+	"borderRadius": "14px"
+}
+
+const Home = ({ id, go, fetchedUser, vkTopic }) => (
 	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
-		{fetchedUser &&
-		<Group title="User Data Fetched with VK Bridge">
-			<Cell
-				before={fetchedUser.photo_200 ? <Avatar src={fetchedUser.photo_200}/> : null}
-				description={fetchedUser.city && fetchedUser.city.title ? fetchedUser.city.title : ''}
-			>
-				{`${fetchedUser.first_name} ${fetchedUser.last_name}`}
-			</Cell>
-		</Group>}
-
-		<Group title="Navigation Example">
-			<Div>
-				<Button size="xl" level="2" onClick={go} data-to="persik">
-					Show me the Persik, please
-				</Button>
-			</Div>
-		</Group>
+		<PanelHeader>Physical Transformation</PanelHeader>
+		<Div style={textAlign}>
+			<Group>
+				<Cell>
+					<Div>
+						<Div>
+							<Link href="https://physical-transformation.online/" target="_blank" style={buttonMain}>Планка, отчеты</Link>
+						</Div>
+					</Div>
+				</Cell>
+				<Cell>
+					<Div>
+						<Div>
+							{fetchedUser && vkTopic && <Link href={`${vkTopic}?offset=last`} target="_blank" style={buttonSecond}>Твоя тема</Link>}
+						</Div>
+					</Div>
+				</Cell>
+			</Group>
+		</Div>
 	</Panel>
 );
 
@@ -36,6 +60,7 @@ Home.propTypes = {
 	go: PropTypes.func.isRequired,
 	fetchedUser: PropTypes.shape({
 		photo_200: PropTypes.string,
+		id: PropTypes.string,
 		first_name: PropTypes.string,
 		last_name: PropTypes.string,
 		city: PropTypes.shape({
